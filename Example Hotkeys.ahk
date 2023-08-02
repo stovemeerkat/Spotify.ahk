@@ -58,6 +58,7 @@ spoofy.Player.LastTrack()
 return 
 
 HandleUnknownVolume() {
-  MsgBox, "Current volume is unknown. The script will be reloaded."
-  Reload
+  MsgBox, 4,, "Current volume is unknown. Do you want the script to reload automatically?"
+  IfMsgBox Yes
+    Reload
 }
