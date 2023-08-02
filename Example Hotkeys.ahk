@@ -23,6 +23,7 @@ return
 
 F1::
 if(VolumePercentage == "")
+  HandleUnknownVolume()
   return
 if(VolumePercentage - Increment > 0)
   VolumePercentage := VolumePercentage - Increment
@@ -31,6 +32,7 @@ return
 
 F2::
 if(VolumePercentage == "")
+  HandleUnknownVolume()
   return
 if(VolumePercentage + Increment <= 100)
   VolumePercentage := VolumePercentage + Increment
@@ -55,3 +57,7 @@ F6::
 spoofy.Player.LastTrack()
 return 
 
+HandleUnknownVolume() {
+  MsgBox, "Current volume is unknown. The script will be reloaded."
+  Reload
+}
