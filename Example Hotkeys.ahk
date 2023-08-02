@@ -22,12 +22,16 @@ RepeatMode := (PlaybackInfo.repeat_state = "context" ? 2 : PlaybackInfo.repeat_s
 return
 
 F1::
+if(VolumePercentage == "")
+  return
 if(VolumePercentage - Increment > 0)
   VolumePercentage := VolumePercentage - Increment
 spoofy.Player.SetVolume(VolumePercentage) ; Decrement the volume percentage and set the player to the new volume percentage
 return
 
 F2::
+if(VolumePercentage == "")
+  return
 if(VolumePercentage + Increment <= 100)
   VolumePercentage := VolumePercentage + Increment
 spoofy.Player.SetVolume(VolumePercentage) ; Increment the volume percentage and set the player to the new volume percentage
